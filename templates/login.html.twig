@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/login.css">
+        <meta charset="utf-8">
+        <title>WeWebStyle | Connection</title>
+    </head>
+    <body id="fond">
+        <div class="container">
+            <div class="image">
+                <img src="../img/logos.png" alt="">
+            </div>
+            <div class="container_from">
+                <div class="{% if errors.login is defined %} invalide {% endif %}">
+                    {% if errors.login is defined %}
+                        <div class="invalide">
+                          <p>{{ messages.login }}</p>
+                        </div>
+                        {% endif %}    
+                </div>
+                <div class="login_form">
+
+                    <form method="post">
+                        <label for="login">Login</label>
+                        <input name="login" type="text" id="login" value="{{ Data.login }}">
+                        <label for="password">Password</label>
+                        <input name="pwd" type="password" id="password"> <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                
+            </div>
+
+        </div>
+    </body>
+</html>
